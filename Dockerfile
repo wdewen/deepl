@@ -22,7 +22,7 @@
 
 FROM ufoym/deepo:all-py36-jupyter-cpu
 RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
-    PIP_INSTALL="pip  install " && \
+    PIP_INSTALL="pip --no-cache-dir install --upgrade" && \
     GIT_CLONE="git clone --depth 10" && \
 
     rm -rf /var/lib/apt/lists/* \
@@ -36,12 +36,12 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 # tensorlayer
 # ------------------------------------------------------------------
 
-    $PIP_INSTALL  tensorlayer
+    pip install  tensorlayer
   
 
 # ==================================================================
 # tflearn
 # ------------------------------------------------------------------
 
-    $PIP_INSTALL  tflearn
+    pip install  tflearn
 
