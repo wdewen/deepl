@@ -43,5 +43,4 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 # tflearn
 # ------------------------------------------------------------------
 
-    $PIP_INSTALL  tflearn && \
-
+    $PIP_INSTALL  tflearn
