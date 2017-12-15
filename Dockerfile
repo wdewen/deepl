@@ -36,12 +36,12 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 # tensorlayer
 # ------------------------------------------------------------------
 
-    pip install  tensorlayer
-  
+    $PIP_INSTALL  tensorlayer && \
+   
 
 # ==================================================================
 # tflearn
 # ------------------------------------------------------------------
 
-    pip install  tflearn
+    $PIP_INSTALL  tflearn && \
 
