@@ -44,3 +44,5 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 # ------------------------------------------------------------------
 
     $PIP_INSTALL  tflearn
+WORKDIR "/root"
+CMD ["/bin/bash"]
