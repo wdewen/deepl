@@ -27,10 +27,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 
     rm -rf /var/lib/apt/lists/* \
 
-
     apt-get update && \
-
-
 
 # ==================================================================
 # tensorlayer
@@ -38,11 +35,27 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 
     $PIP_INSTALL  tensorlayer && \
    
-
 # ==================================================================
 # tflearn
 # ------------------------------------------------------------------
 
-    $PIP_INSTALL  tflearn
-WORKDIR "/root"
-CMD ["/bin/bash"]
+    $PIP_INSTALL  tflearn  && \
+    
+# ==================================================================
+
+# excel
+# ------------------------------------------------------------------
+
+   $PIP_INSTALL  xlrd \
+                 xlwt \
+                 && \
+    
+# ==================================================================
+
+# config & cleanup
+# ------------------------------------------------------------------
+    apt-get clean && \
+    apt-get autoremove
+    
+    WORKDIR "/root"
+    CMD ["/bin/bash"]
