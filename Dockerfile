@@ -25,8 +25,6 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     PIP_INSTALL="pip --no-cache-dir install --upgrade" && \
     GIT_CLONE="git clone --depth 10" && \
 
-    rm -rf /var/lib/apt/lists/* \
-
     apt-get update && \
 
 # ==================================================================
