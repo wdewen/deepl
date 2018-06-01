@@ -341,11 +341,17 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
                          graphviz \
                          && \
     $PIP_INSTALL  pydot_ng  && \
+    
 # ==================================================================
 # config & cleanup
 # ------------------------------------------------------------------
+
+    ldconfig && \
     apt-get clean && \
-    apt-get autoremove
+    apt-get autoremove && \
+    rm -rf /var/lib/apt/lists/* /tmp/* ~/*
     
     WORKDIR "/root"
     CMD ["/bin/bash"]
+    
+EXPOSE 8888 6006
