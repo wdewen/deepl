@@ -28,6 +28,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
         wget \
         git \
         vim \
+        curl \
         && \
 
 # ==================================================================
@@ -128,9 +129,12 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     ldconfig && \
     apt-get clean && \
     apt-get autoremove && \
-    rm -rf /var/lib/apt/lists/* /tmp/* ~/*
+    rm -rf /var/lib/apt/lists/* /tmp/* ~/*  && \
+    
+    mkdir -p /root/.keras/datasets  && \
+    curl -SL https://s3.amazonaws.com/img-datasets/mnist.npz
     
     WORKDIR "/root"
     CMD ["/bin/bash"]
- 
+
 EXPOSE 8888 6006
