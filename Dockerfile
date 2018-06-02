@@ -132,7 +132,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     rm -rf /var/lib/apt/lists/* /tmp/* ~/*  && \
     
     mkdir -p /root/.keras/datasets  && \
-    curl -SL https://s3.amazonaws.com/img-datasets/mnist.npz
+    curl -O https://s3.amazonaws.com/img-datasets/mnist.npz
     
     WORKDIR "/root"
     CMD ["/bin/bash"]
