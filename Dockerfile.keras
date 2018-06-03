@@ -35,7 +35,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
 # python3-tk
 # ------------------------------------------------------------------  
 
-    $APT_INSTALL python3-tk && \
+   # $APT_INSTALL python3-tk && \
     
 # ==================================================================
 # pydot and graphviz
