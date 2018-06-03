@@ -1,7 +1,21 @@
 FROM tensorflow/tensorflow
 RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     PIP_INSTALL="python -m pip --no-cache-dir install --upgrade" && \
-    apt-get update && \
+    
+# ==================================================================
+# python3-tk
+# ------------------------------------------------------------------  
+
+    $APT_INSTALL python3-tk && \
+    
+# ==================================================================
+# pydot and graphviz
+# ------------------------------------------------------------------ 
+
+    $APT_INSTALL python3-pydot \
+                         graphviz \
+                         && \
+    $PIP_INSTALL  pydot_ng  && \
     
 # ==================================================================
 # excel
@@ -10,7 +24,7 @@ RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
    $PIP_INSTALL  xlrd \
                  xlwt \
                  && \
-    
+
 # ==================================================================
 # keras
 # ------------------------------------------------------------------
